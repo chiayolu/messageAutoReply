@@ -1,0 +1,57 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+
+	<display-name>Archetype Created Web Application</display-name>
+
+	<welcome-file-list>
+		<!-- <welcome-file>List.action</welcome-file> -->
+		<welcome-file>site/theme/front/talk.jsp</welcome-file>
+	</welcome-file-list>
+
+	<filter>
+		<filter-name>MyFilter</filter-name>
+		<filter-class>com.my.utils.MyFilter</filter-class>
+		<init-param>
+			<param-name>parameter</param-name>
+			<param-value>web.xml中的参数</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>MyFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<servlet>
+		<servlet-name>ListServlet</servlet-name>
+		<servlet-class>com.my.controller.ListServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ListServlet</servlet-name>
+		<url-pattern>/List.action</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>DeleteOneServlet</servlet-name>
+		<servlet-class>com.my.controller.DeleteOneServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DeleteOneServlet</servlet-name>
+		<url-pattern>/DeleteOneServlet.action</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>DeleteBatchServlet</servlet-name>
+		<servlet-class>com.my.controller.DeleteBatchServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DeleteBatchServlet</servlet-name>
+		<url-pattern>/DeleteBatchServlet.action</url-pattern>
+	</servlet-mapping>
+	
+</web-app>
